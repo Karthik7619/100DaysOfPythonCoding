@@ -12,21 +12,16 @@ nr_letters = int(input("How many letters would you like in your password?\n"))
 nr_symbols = int(input(f"How many symbols would you like?\n"))
 nr_numbers = int(input(f"How many numbers would you like?\n"))
 
-lettersCon = ""
-for let in range(1, nr_letters + 1):
-    random_int = random.randint(1, len(letters) - 1)
-    lettersCon += letters[random_int]
+password = ""
+for char in range(1, nr_letters + 1):
+    password+= random.choice(letters)
 
-sym = ""
-for let in range(1, nr_symbols + 1):
-    random_sym = random.randint(1, len(symbols) - 1)
-    sym += symbols[random_sym]
+for char in range(1, nr_symbols + 1):
+    password+=random.choice(symbols)
 
-num = ""
-for let in range(1, nr_numbers + 1):
-    random_num = random.randint(1, len(numbers) - 1)
-    num += numbers[random_num]
+for char in range(1, nr_numbers + 1):
+    password+=random.choice(numbers)
 
-print(lettersCon + sym + num)
+print(password)
 
 
